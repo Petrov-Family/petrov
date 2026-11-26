@@ -60,3 +60,111 @@ document.getElementById("applicationForm").addEventListener("submit", async func
         submitBtn.innerText = "إرسال الطلب الآن";
     }
 });
+(function initPetrovTiersProgress() {
+  const grid = document.getElementById("pvTiersGrid");
+  if (!grid) return;
+
+  const cards = grid.querySelectorAll(".pv-tier-card");
+
+  function animateCard(card) {
+    if (card.dataset.animated === "true") return;
+    card.dataset.animated = "true";
+
+    const fill = card.querySelector(".pv-progress-fill");
+    const pctEl = card.querySelector(".pv-pct-value");
+    if (!fill || !pctEl) return;
+
+    const target = Math.max(0, Math.min(100, Number(fill.dataset.progress || 0)));
+    requestAnimationFrame(() => {
+      fill.style.width = target + "%";
+    });
+
+    const duration = 1000;
+    const start = performance.now();
+
+    function step(now) {
+      const progress = Math.min(1, (now - start) / duration);
+      const currentVal = Math.round(target * progress);
+      pctEl.textContent = currentVal + "%";
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCard(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+  } else {
+    cards.forEach(animateCard);
+  }
+})();
+(function () {
+  const bars = document.querySelectorAll("#pvTiersGrid .tier-bar");
+  if (!bars.length) return;
+
+  setTimeout(() => {
+    bars.forEach((bar) => {
+      const pct = bar.getAttribute("data-progress") || "0";
+      bar.style.width = pct + "%";
+    });
+  }, 150);
+})();
+(function () {
+  const cards = document.querySelectorAll("#pvTiersGrid .tier-card");
+  if (!cards.length) return;
+
+  setTimeout(() => {
+    cards.forEach((card) => {
+      const bar = card.querySelector(".tier-bar");
+      const pctLabel = card.querySelector(".tier-pct");
+      if (!bar || !pctLabel) return;
+
+      const target = Number(bar.getAttribute("data-progress") || 0);
+      bar.style.width = target + "%";
+      pctLabel.textContent = target + "%";
+    });
+  }, 150);
+})();
+(function initVaultHoverSpotlight() {
+  const grid = document.getElementById("pvTiersGrid");
+  if (!grid) return;
+
+  const cards = grid.querySelectorAll(".tier-card");
+
+  grid.addEventListener("pointerenter", () => {
+    grid.classList.add("is-hovering");
+  });
+
+  grid.addEventListener("pointerleave", () => {
+    grid.classList.remove("is-hovering");
+  });
+
+  cards.forEach((card) => {
+    card.addEventListener("pointermove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty("--mx", `${x}px`);
+      card.style.setProperty("--my", `${y}px`);
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.setProperty("--mx", "50%");
+      card.style.setProperty("--my", "50%");
+    });
+  });
+})();

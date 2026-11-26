@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petrov Vault | متجر عائلة بيتروف</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="shortcut icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css?v=11" />
+</head>
+<body class="store-page-body">
+
+    <!-- الشريط العلوي الموحد -->
+    <header class="navbar">
+        <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+            <img src="logo.png" alt="PV" style="height: 36px; filter: drop-shadow(0 0 8px rgba(212,175,55,0.4));">
+            <div>PETROV <span>FAMILY</span></div>
+        </a>
+
+        <nav class="nav-pill">
+            <a href="index.html#home">الرئيسية</a>
+            <a href="index.html#rules">قوانين العائلة</a>
+            <a href="index.html#ranks">الرتب</a>
+            <a href="index.html#apply">التقديمات</a>
+            <a href="store.html" class="nav-store-link active-store-tab">المتجر <span class="nav-soon-badge">SOON</span></a>
+            <a href="https://discord.gg/SfunzUr9v4" target="_blank">الديسكورد</a>
+        </nav>
+
+        <div class="status-badge vault-locked-badge">
+            <span class="dot"></span> الخزينة قيد التجهيز
+        </div>
+    </header>
+
+    <!-- الواجهة الرئيسية للمتجر -->
+    <main class="vault-main">
+        <div class="vault-ambient-glow"></div>
+
+        <section class="vault-hero-wrapper">
+            <div class="vault-frame-outer">
+                <div class="vault-frame-inner">
+
+                    <!-- شارة الحالة العلوية -->
+                    <div class="vault-status-pill">
+                        <span class="pulse-dot"></span>
+                        <span>PETROV VAULT • ACCESS RESTRICTED</span>
+                    </div>
+
+                    <!-- العنوان العملاق -->
+                    <h1 class="vault-giant-title">
+                        <span class="glitch-text" data-text="SOON">SOON</span>
+                        <small>متجر وخزينة عائلة بيتروف الرسمية</small>
+                    </h1>
+
+                    <p class="vault-subtitle">
+                        نجهّز حالياً بوابة حصرية لأعضاء <strong>Petrov Family</strong> في <strong>WnashTime RP</strong>؛ 
+                        حزم خاصة، امتيازات VIP، وتجهيزات محدودة ستُفتح قريباً بمعايير تليق باسم العائلة.
+                    </p>
+
+                    <!-- العداد التنازلي -->
+                    <div class="vault-timer-box" id="petrovCountdown">
+                        <div class="v-time">
+                            <span id="cd-days">15</span>
+                            <small>أيام</small>
+                        </div>
+                        <div class="v-sep">:</div>
+                        <div class="v-time">
+                            <span id="cd-hours">00</span>
+                            <small>ساعات</small>
+                        </div>
+                        <div class="v-sep">:</div>
+                        <div class="v-time">
+                            <span id="cd-minutes">00</span>
+                            <small>دقائق</small>
+                        </div>
+                        <div class="v-sep">:</div>
+                        <div class="v-time">
+                            <span id="cd-seconds">00</span>
+                            <small>ثواني</small>
+                        </div>
+                    </div>
+
+                    <!-- أزرار التحكم -->
+                    <div class="vault-cta-group">
+                        <a href="https://discord.gg/SfunzUr9v4" target="_blank" class="vault-btn-gold">
+                            🔔 ترقّب الافتتاح في الديسكورد
+                        </a>
+                        <a href="index.html" class="vault-btn-ghost">
+                            ← العودة للصفحة الرئيسية
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="pv-vault-section">
+  <div class="tiers-grid" id="pvTiersGrid">
+    <!-- TIER 01 -->
+    <article class="tier-card" data-code="01">
+      <div class="tier-spotlight" aria-hidden="true"></div>
+      <div class="tier-top">
+        <span class="tier-num">TIER 01</span>
+        <span class="tier-badge"><span class="lock-dot"></span> LOCKED</span>
+      </div>
+
+      <div class="tier-header-row">
+        <div class="tier-icon-box">🛡️</div>
+        <div>
+          <span class="tier-sub">ATELIER DIVISION</span>
+          <h3 class="tier-title">WARDROBE VAULT</h3>
+        </div>
+      </div>
+
+      <p class="tier-desc">
+        تصاميم وإطلالات حصرية تُفصَّل على مقاس الهيبة، لتعرف ملامحك قبل أن تنطق بأي كلمة.
+      </p>
+
+      <div class="tier-footer">
+        <div class="tier-meta">
+          <span>حالة التجهيز</span>
+          <strong class="tier-pct">85%</strong>
+        </div>
+        <div class="tier-progress">
+          <div class="tier-bar" style="width: 85%;"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TIER 02 -->
+    <article class="tier-card tier-elite" data-code="02">
+      <div class="tier-spotlight" aria-hidden="true"></div>
+      <div class="tier-top">
+        <span class="tier-num">TIER 02 • ELITE</span>
+        <span class="tier-badge"><span class="lock-dot"></span> LOCKED</span>
+      </div>
+
+      <div class="tier-header-row">
+        <div class="tier-icon-box">👑</div>
+        <div>
+          <span class="tier-sub">MOTORS DIVISION</span>
+          <h3 class="tier-title">IGNITION DIVISION</h3>
+        </div>
+      </div>
+
+      <p class="tier-desc">
+        مفاتيح محركات لا تدور للجميع، وحضور يفرض نفسه من أول هدير في شوارع المدينة.
+      </p>
+
+      <div class="tier-footer">
+        <div class="tier-meta">
+          <span>حالة التجهيز</span>
+          <strong class="tier-pct">70%</strong>
+        </div>
+        <div class="tier-progress">
+          <div class="tier-bar" style="width: 70%;"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TIER 03 -->
+    <article class="tier-card" data-code="03">
+      <div class="tier-spotlight" aria-hidden="true"></div>
+      <div class="tier-top">
+        <span class="tier-num">TIER 03</span>
+        <span class="tier-badge"><span class="lock-dot"></span> LOCKED</span>
+      </div>
+
+      <div class="tier-header-row">
+        <div class="tier-icon-box">⚡</div>
+        <div>
+          <span class="tier-sub">SANCTUARY DIVISION</span>
+          <h3 class="tier-title">PRIVATE ESTATES</h3>
+        </div>
+      </div>
+
+      <p class="tier-desc">
+        أبواب خاصة ومواقع مختارة بعناية لمن يبحث عن قاعدة ثابتة ومساحة تليق باسمه.
+      </p>
+
+      <div class="tier-footer">
+        <div class="tier-meta">
+          <span>حالة التجهيز</span>
+          <strong class="tier-pct">60%</strong>
+        </div>
+        <div class="tier-progress">
+          <div class="tier-bar" style="width: 60%;"></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+        <!-- قسم طريقة عمل المتجر (3 خطوات واضحة بدون تعقيد) -->
+        <section class="vault-steps-section">
+            <div class="vault-steps-box">
+                <h3> كيفية استخدام المتجر عند الافتتاح <span>المتجر</span> ملي يفتح؟</h3>
+                <div class="vault-steps-grid">
+                    <div class="v-step">
+                        <span class="v-step-num">01</span>
+                        <h4>اختر الباقة</h4>
+                        <p>تصفّح العروض والامتيازات المتاحة داخل صفحة المتجر بوضوح تام.</p>
+                    </div>
+                    <div class="v-step">
+                        <span class="v-step-num">02</span>
+                        <h4>أكّد طلبك</h4>
+                        <p>أرسل طلبك مباشرة عبر النظام المرتبط بالديسكورد الرسمي للعائلة.</p>
+                    </div>
+                    <div class="v-step">
+                        <span class="v-step-num">03</span>
+                        <h4>استلام فوري</h4>
+                        <p>تفعيل المزايا الخاصة بك من طرف الإدارة بأسرع وقت وبدون تعقيد.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- الشريط السفلي الموحد -->
+    <footer class="bottom-bar">
+        <div class="stats">
+            <span>VAULT STATUS: <strong class="online">COMING SOON</strong></span>
+            <span>Developed by: <strong>SPIRO - Sp.0</strong></span>
+        </div>
+        <div class="tags">
+            <span>WNASHTIME RP</span>
+            <span>MTA:SA</span>
+            <span>PETROV EMPIRE</span>
+        </div>
+    </footer>
+
+    <script src="script.js?v=5"></script>
+</body>
+</body>
+</html>
